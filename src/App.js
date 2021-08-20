@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import MyComponent from "./MyComponent";
+import MyComponent2 from "./MyComponent2";
+
 
 
 function App() {
@@ -35,6 +37,7 @@ useEffect (()=>{
       />
 
       <MyComponent textToShow={inputText} />
+      <
     </div>
   );
 }

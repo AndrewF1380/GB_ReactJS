@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./App.css";
 
 function App() {  
@@ -8,21 +8,34 @@ function App() {
 
   console.log(messagesArray);
   
-  const onButoonClick = ()=>{
+  const onSendMessage = useCallback ( ()=>{
     setMessagesArray(prev => [...prev, inputMessage]);
     setInputMessage(' ');
-  }
+  },[inputMessage]);
+
+
+
+  
 
   return  <div className="mainWrapper">
     <div className='messageList' >
-        {messagesArray.map((message) => (
-            <div> {message} </div>
+        {messagesArray.map((message, i) => (
+            <div key={i}> {message} </div>
           ))}
     </div>
 
       <div className='inputWrapper'>
-        <input className='input' value={inputMessage} onChange={e=>setInputMessage(e.target.value)} />
-        <button onClick={onButoonClick}>Отправить</button>
+        <input 
+        className='input' 
+        value={inputMessage} 
+        onChange={e=>setInputMessage(e.target.value)} 
+        onKeyDown = {({key}) => {
+          if (key=== 'Enter'){
+            onSendMessage();
+          }
+        } }
+        />
+        <button onClick={onSendMessage}>Отправить</button>
       </div>  
   </div>
 }

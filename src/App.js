@@ -13,7 +13,7 @@ function App() {
   //   setInputMessage(' ');
   // },[inputMessage]);
 
-  return  <div className="mainWrapper">
+  return  <div >
           <MessagesList/>
           </div>
 }

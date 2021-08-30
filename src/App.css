@@ -1,6 +1,6 @@
 .mainWrapper{
   width: 600px;
-  height: 800px;
+  height: 600px;
   border: 1px solid black;
   display: flex;
   flex-direction: column;

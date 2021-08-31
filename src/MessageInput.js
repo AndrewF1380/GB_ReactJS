@@ -31,6 +31,7 @@ const MessageInput = ({onSendMessagedMsg})=>{
     <TextField
         // className='input' 
         // multiline
+        autoFocus
         label="Введите сообщение"
         value={inputMessage}
         onChange={e => setInputMessage(e.target.value)}
